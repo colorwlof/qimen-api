@@ -1,15 +1,28 @@
 ---
 name: skill-qimen-api
 description: 
-EN: Xiaoqi Intelligent Calculation provides traditional metaphysics API services including BaZi (Eight Characters) and Qi Men Dun Jia. Rooted in data analysis and cognitive science, it offers rational decision-making references.
-CN: 小奇智算提供八字、奇门遁甲等传统命理API服务，基于数据分析与认知科学，提供理性决策参考。
-metadata: {"claw":{"emoji":"☯️"}}
+EN: Official MCP API skill for Xiaoqi Intelligent Calculation, providing BaZi and Qi Men Dun Jia chart generation & interpretation. Official service with clear billing, privacy policy and operator information.
+CN: 小奇智算官方 MCP 技能，提供八字、奇门遁甲排盘与解盘接口，官方正规服务，明码标价、附带隐私政策与主体信息。
+metadata:
+  claw:
+    emoji: "☯️"
+    homepage: "https://www.xiaoqizhisuan.cn"
+    privacyPolicy: "https://www.xiaoqizhisuan.cn/privacy.html"
+    termsOfService: "https://www.xiaoqizhisuan.cn/terms.html"
+    provider: "小奇智算官方"
+    requiresCredentials:
+      - name: x-api-key
+        description: 小奇智算 API 访问密钥，在官网个人中心获取
+    billingModel: pay-per-call
+    autonomousInvocation: optional
 ---
-
+<p align="center">
+  <img src="https://www.xiaoqizhisuan.cn/images/logo-purple.png" width="256" alt="小奇智算LOGO"/>
+</p>
 # 小奇智算 API 能力 | Xiaoqi Intelligent Calculation API Skill
 
-GET APIKEY：https://www.xiaoqizhisuan.cn
-
+GET APIKEY：https://www.xiaoqizhisuan.cn/account.html
+GET HELP: https://www.xiaoqizhisuan.cn/help.html
 
 ## 可用工具 | Available Tools
 ### 1. bazi_dayun - 八字大运查询 | BaZi Great Fortune Query
@@ -140,7 +153,7 @@ OpenClaw / Hermes / mcporter 配置 | Configuration
       "type": "streamable-http",
       "url": "https://www.xiaoqizhisuan.cn/mcp",
       "headers": {
-        "x-api-key": "xq_你的API密钥 / xq_Your-API-Key",
+        "x-api-key": "${XIAOQIZHISUAN_API_KEY}",
         "Accept": "application/json, text/event-stream"
       }
     }
@@ -155,7 +168,7 @@ Claude Desktop / Cursor / Windsurf 配置 | Configuration
     "xiaoqi": {
       "url": "https://www.xiaoqizhisuan.cn/mcp",
       "headers": {
-        "x-api-key": "xq_你的API密钥 / xq_Your-API-Key",
+        "x-api-key": "${XIAOQIZHISUAN_API_KEY}",
         "Accept": "application/json, text/event-stream"
       }
     }
@@ -171,7 +184,7 @@ Claude Desktop / Cursor / Windsurf 配置 | Configuration
 curl -X POST https://www.xiaoqizhisuan.cn/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
-  -H "x-api-key: xq_你的API密钥" \
+  -H "x-api-key: ${XIAOQIZHISUAN_API_KEY}"" \
   -d '{
     "jsonrpc": "2.0",
     "id": 1,
@@ -188,7 +201,7 @@ curl -X POST https://www.xiaoqizhisuan.cn/mcp \
 curl -X POST https://www.xiaoqizhisuan.cn/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
-  -H "x-api-key: xq_你的API密钥" \
+  -H "x-api-key: ${XIAOQIZHISUAN_API_KEY}" \
   -d '{
     "jsonrpc": "2.0",
     "id": 2,
@@ -201,7 +214,7 @@ curl -X POST https://www.xiaoqizhisuan.cn/mcp \
 curl -X POST https://www.xiaoqizhisuan.cn/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
-  -H "x-api-key: xq_你的API密钥" \
+  -H "x-api-key: ${XIAOQIZHISUAN_API_KEY}" \
   -d '{
     "jsonrpc": "2.0",
     "id": 3,
@@ -213,16 +226,6 @@ curl -X POST https://www.xiaoqizhisuan.cn/mcp \
       }
     }
   }'
-```
-
-
-## windows/powershell
-```powershell
-curl -X POST https://www.xiaoqizhisuan.cn/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -H "x-api-key: xq_你的API密钥" -d "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-03-26\",\"capabilities\":{},\"clientInfo\":{\"name\":\"my-client\",\"version\":\"1.0\"}}}"
-
-curl -X POST https://www.xiaoqizhisuan.cn/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -H "x-api-key: xq_你的API密钥" -d "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/list\",\"params\":{}}"
-
-curl -X POST https://www.xiaoqizhisuan.cn/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -H "x-api-key: xq_你的API密钥" -d "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"bazi_dayun\",\"arguments\":{\"year\":1990,\"month\":5,\"day\":15,\"hour\":8,\"xingbie\":\"男\"}}}"
 ```
 
 ## 错误码说明 | Error Code Explanation
@@ -240,8 +243,16 @@ curl -X POST https://www.xiaoqizhisuan.cn/mcp -H "Content-Type: application/json
    CN: 接入使用时建议补充免责声明。
 
 ---
-EN: This service is officially provided by Xiaoqi Intelligent Calculation WeChat Official Account.
-CN: 本服务由小奇智算官方服务号独家提供。详细调用示例：https://www.xiaoqizhisuan.cn/help.html
+## 服务商声明 | Service Provider Statement
+CN: 本技能为【小奇智算】官方自研服务，运营主体、接口计费、隐私规则均公示于官网：
+EN: This skill is an official self-developed service of [Xiaoqi Intelligent Calculation]. The operating entity, interface billing, and privacy rules are publicly available on the official website:
+
+官网 | Official Website: https://www.xiaoqizhisuan.cn
+隐私政策 | Privacy Policy: https://www.xiaoqizhisuan.cn/privacy.html
+服务条款 | Terms of Service: https://www.xiaoqizhisuan.cn/terms.html
+
+CN: 本服务为明码标价按量计费，所有接口价格、扣费规则均文档公示，无隐性收费。
+EN: This service uses transparent pay-per-call pricing. All interface prices and deduction rules are publicly documented with no hidden fees.
 
 ---
 
@@ -255,3 +266,10 @@ CN: 本服务由小奇智算官方服务号独家提供。详细调用示例：h
 7. 用神 — Useful God
 8. 即时盘 — Immediate Chart
 9. 终身盘 — Lifetime Chart
+
+<p align="center">
+  <img src="https://www.xiaoqizhisuan.cn/images/服务号二维码(透底).png" width="256" alt="小奇智算服务号二维码" />
+</p>
+<p align="center">
+  <img src="https://www.xiaoqizhisuan.cn/images/logo带口号.png" width="256" alt="小奇智算服务号logo" />
+</p>
