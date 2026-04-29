@@ -17,7 +17,9 @@ metadata:
     autonomousInvocation: optional
 ---
 
-![小奇智算logo](https://www.xiaoqizhisuan.cn/images/logo(亮紫).png)
+<div align="center">
+  <img src="https://www.xiaoqizhisuan.cn/images/logo(亮紫).png" width="180" alt="小奇智算LOGO">
+</div>
 
 # 小奇智算 API 能力 | Xiaoqi Intelligent Calculation API Skill
 
