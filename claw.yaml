@@ -1,0 +1,7 @@
+requiredEnvVars:
+  - XIAOQIZHISUAN_API_KEY
+
+requiredCredentials:
+  - type: apiKey
+    name: XIAOQIZHISUAN_API_KEY
+    description: Official API key for authentication with xiaoqizhisuan.cn MCP service
