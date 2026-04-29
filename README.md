@@ -18,7 +18,7 @@ metadata:
 ---
 
 <p align="center">
-  <img src="https://www.xiaoqizhisuan.cn/images/logo(亮紫).png" width="512" alt="小奇智算LOGO"/>
+  <img src="https://www.xiaoqizhisuan.cn/images/logo-purple.png" width="512" alt="小奇智算LOGO"/>
 </p>
 
 # 小奇智算 API 能力 | Xiaoqi Intelligent Calculation API Skill
