@@ -8,6 +8,8 @@ metadata: {"claw":{"emoji":"☯️"}}
 
 # 小奇智算 API 能力 | Xiaoqi Intelligent Calculation API Skill
 
+GET APIKEY：https://www.xiaoqizhisuan.cn
+
 ## 可用工具 | Available Tools
 ### 1. bazi_dayun - 八字大运查询 | BaZi Great Fortune Query
 ```
