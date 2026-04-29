@@ -25,9 +25,9 @@ GET APIKEY：https://www.xiaoqizhisuan.cn
 返回 | Return:
  success, cost, balance, bazi, dayun, error
 
+```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_1_bazi_dayun.html
 
-```
 
 ### 2. qimen_paipan - 奇门排盘（JSON 数据）| Qi Men Chart Generation (JSON Data)
 ```
@@ -43,9 +43,9 @@ GET APIKEY：https://www.xiaoqizhisuan.cn
 返回 | Return:
  success, cost, balance, 数据, error
 
+```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_2_qimen_paipan.html
 
-```
 
 ### 3. qimen_paipan_image - 奇门排盘+HTML网页图 | Qi Men Chart Generation + HTML Webpage Chart
 ```
@@ -60,9 +60,9 @@ GET APIKEY：https://www.xiaoqizhisuan.cn
 返回 | Return:
  success, cost, balance, 数据, html_url, error
 
+```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_3_qimen_paipan_image.html
 
-```
 
 ### 4. qimen_jiepan - 即时盘解析准备 | Immediate Chart Analysis Preparation
 ```
@@ -76,9 +76,9 @@ GET APIKEY：https://www.xiaoqizhisuan.cn
 返回 | Return:
  success, cost, balance, html_url, system_prompt, user_prompt, error
 
+```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_4_qimen_jiepan.html
 
-```
 
 ### 5. qimen_jiepan_lifetime - 终身盘解析准备 | Lifetime Chart Analysis Preparation
 ```
@@ -93,9 +93,9 @@ GET APIKEY：https://www.xiaoqizhisuan.cn
 返回 | Return:
  success, cost, balance, bazi, dayun, html_url, system_prompt, user_prompt, error
 
+```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_5_qimen_jiepan_lifetime.html
 
-```
 
 ### 6. qimen_full - 即时局完整解盘 | Complete Immediate Chart Interpretation
 ```
@@ -109,9 +109,9 @@ GET APIKEY：https://www.xiaoqizhisuan.cn
 返回 | Return:
  success, cost, balance, html_url, system_prompt, user_prompt, jiepan_result, error
 
+```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_6_qimen_full.html
 
-```
 
 ### 7. qimen_full_lifetime - 终身局完整解盘 | Complete Lifetime Chart Interpretation
 ```
@@ -126,9 +126,9 @@ GET APIKEY：https://www.xiaoqizhisuan.cn
 返回 | Return:
  success, cost, balance, bazi, dayun, html_url, system_prompt, user_prompt, jiepan_result, error
 
+```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_7_qimen_full_lifetime.html
 
-```
 
 ## API 调用方式 | API Integration Methods
 ### MCP 服务对接 | MCP Server Configuration
