@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.xiaoqizhisuan.cn/images/logo-purple.png" width="256" alt="小奇智算LOGO"/>
+  <img src="https://www.xiaoqizhisuan.cn/images/logo.png" width="256" alt="小奇智算LOGO"/>
 </p>
 # 小奇智算 API 能力 | Xiaoqi Intelligent Calculation API Skill
 
@@ -250,7 +250,7 @@ EN: This service uses transparent pay-per-call pricing. All interface prices and
 9. 终身盘 — Lifetime Chart
 
 <p align="center">
-  <img src="https://www.xiaoqizhisuan.cn/images/服务号二维码(透底).png" width="256" alt="小奇智算服务号二维码" />
+  <img src="https://www.xiaoqizhisuan.cn/images/服务号二维码_白底.jpg" width="256" alt="小奇智算服务号二维码" />
 </p>
 <p align="center">
   <img src="https://www.xiaoqizhisuan.cn/images/logo带口号.png" width="256" alt="小奇智算服务号logo" />
