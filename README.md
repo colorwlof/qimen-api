@@ -1,21 +1,3 @@
----
-name: skill-qimen-api
-description: 
-EN: Official MCP API skill for Xiaoqi Intelligent Calculation, providing BaZi and Qi Men Dun Jia chart generation & interpretation. Official service with clear billing, privacy policy and operator information.
-CN: 小奇智算官方 MCP 技能，提供八字、奇门遁甲排盘与解盘接口，官方正规服务，明码标价、附带隐私政策与主体信息。
-metadata:
-  claw:
-    emoji: "☯️"
-    homepage: "https://www.xiaoqizhisuan.cn"
-    privacyPolicy: "https://www.xiaoqizhisuan.cn/privacy.html"
-    termsOfService: "https://www.xiaoqizhisuan.cn/terms.html"
-    provider: "小奇智算官方"
-    requiresCredentials:
-      - name: x-api-key
-        description: 小奇智算 API 访问密钥，在官网个人中心获取
-    billingModel: pay-per-call
-    autonomousInvocation: optional
----
 <p align="center">
   <img src="https://www.xiaoqizhisuan.cn/images/logo-purple.png" width="256" alt="小奇智算LOGO"/>
 </p>
