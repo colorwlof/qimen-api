@@ -10,54 +10,124 @@ metadata: {"claw":{"emoji":"☯️"}}
 
 GET APIKEY：https://www.xiaoqizhisuan.cn
 
+
 ## 可用工具 | Available Tools
 ### 1. bazi_dayun - 八字大运查询 | BaZi Great Fortune Query
 ```
 价格 | Price: ¥0.2 / time / 次
-参数 | Parameters: No parameters required, user's BaZi information is automatically acquired / 无需参数，自动获取用户八字信息
-返回 | Return: Detailed data of BaZi, Great Fortune and Fleeting Year / 八字、大运、流年详细信息
+参数 | Parameters:
+ year (integer, 必填) 出生年（公历）
+ month (integer, 必填) 出生月
+ day (integer, 必填) 出生日
+ hour (integer, 必填) 出生时（0-23）
+ xingbie (string, 必填) 性别（"男" / "女"）
+
+返回 | Return:
+ success, cost, balance, bazi, dayun, error
+
+实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_1_bazi_dayun.html
+
 ```
 
 ### 2. qimen_paipan - 奇门排盘（JSON 数据）| Qi Men Chart Generation (JSON Data)
 ```
 价格 | Price: ¥0.5 / time / 次
-参数 | Parameters: question (Optional) - Inquiry question / question（可选）- 求测问题
-返回 | Return: Qi Men chart data in JSON format / JSON格式排盘数据
+参数 | Parameters:
+ year (integer, 必填) 年
+ month (integer, 必填) 月
+ day (integer, 必填) 日
+ hour (integer, 必填) 时（0-23）
+ minute (integer, 选填, 默认0) 分
+ number (integer, 选填, 默认1) 排盘方法（1=拆补法, 2=置润法）
+
+返回 | Return:
+ success, cost, balance, 数据, error
+
+实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_2_qimen_paipan.html
+
 ```
 
 ### 3. qimen_paipan_image - 奇门排盘+HTML网页图 | Qi Men Chart Generation + HTML Webpage Chart
 ```
-价格 | Price: ¥0.8 / time / 次
-参数 | Parameters: question (Optional) - Inquiry question / question（可选）- 求测问题
-返回 | Return: Interactive HTML webpage chart for viewing / HTML网页排盘，可交互查看
+参数 | Parameters:
+ year (integer, 必填) 年
+ month (integer, 必填) 月
+ day (integer, 必填) 日
+ hour (integer, 必填) 时（0-23）
+ minute (integer, 选填, 默认0)
+ number (integer, 选填, 默认1)
+
+返回 | Return:
+ success, cost, balance, 数据, html_url, error
+
+实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_3_qimen_paipan_image.html
+
 ```
 
 ### 4. qimen_jiepan - 即时盘解析准备 | Immediate Chart Analysis Preparation
 ```
 价格 | Price: ¥1.0 / time / 次
-参数 | Parameters: question (Required) - Inquiry question / question（必填）- 求测问题
-返回 | Return: Useful God, analysis ideas, webpage chart, dedicated prompt / 用神、分析思路、网页排盘、提示词
+参数 | Parameters:
+ year, month, day, hour (integer, 必填) 起盘时间
+ minute (integer, 选填, 默认0)
+ number (integer, 选填, 默认1)
+ question (string, 必填)
+
+返回 | Return:
+ success, cost, balance, html_url, system_prompt, user_prompt, error
+
+实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_4_qimen_jiepan.html
+
 ```
 
 ### 5. qimen_jiepan_lifetime - 终身盘解析准备 | Lifetime Chart Analysis Preparation
 ```
 价格 | Price: ¥1.2 / time / 次
-参数 | Parameters: question (Required) - Inquiry question / question（必填）- 求测问题
-返回 | Return: BaZi & Great Fortune, Useful God, analysis ideas, webpage chart, dedicated prompt / 八字大运、用神、分析思路、网页排盘、提示词
+参数 | Parameters:
+ year, month, day, hour (integer, 必填)
+ xingbie (string, 必填) 性别（"男"/"女"）
+ minute (integer, 选填, 默认0)
+ number (integer, 选填, 默认1)
+ question (string, 必填)
+
+返回 | Return:
+ success, cost, balance, bazi, dayun, html_url, system_prompt, user_prompt, error
+
+实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_5_qimen_jiepan_lifetime.html
+
 ```
 
 ### 6. qimen_full - 即时局完整解盘 | Complete Immediate Chart Interpretation
 ```
 价格 | Price: ¥1.5 / time / 次
-参数 | Parameters: question (Required) - Inquiry question / question（必填）- 求测问题
-返回 | Return: Webpage chart, Useful God, analysis ideas, prompt, LLM-generated interpretation / 网页排盘、用神、分析思路、提示词、大模型解盘文案
+参数 | Parameters:
+ year, month, day, hour (integer, 必填)
+ minute (integer, 选填, 默认0)
+ number (integer, 选填, 默认1)
+ question (string, 必填)
+
+返回 | Return:
+ success, cost, balance, html_url, system_prompt, user_prompt, jiepan_result, error
+
+实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_6_qimen_full.html
+
 ```
 
 ### 7. qimen_full_lifetime - 终身局完整解盘 | Complete Lifetime Chart Interpretation
 ```
 价格 | Price: ¥2.0 / time / 次
-参数 | Parameters: question (Required) - Inquiry question / question（必填）- 求测问题
-返回 | Return: BaZi & Great Fortune, webpage chart, Useful God, analysis ideas, prompt, LLM-generated interpretation / 八字大运、网页排盘、用神、分析思路、提示词、大模型解盘文案
+参数 | Parameters:
+ year, month, day, hour (integer, 必填)
+ xingbie (string, 必填) 性别（"男"/"女"）
+ minute (integer, 选填, 默认0)
+ number (integer, 选填, 默认1)
+ question (string, 必填)
+
+返回 | Return:
+ success, cost, balance, bazi, dayun, html_url, system_prompt, user_prompt, jiepan_result, error
+
+实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_7_qimen_full_lifetime.html
+
 ```
 
 ## API 调用方式 | API Integration Methods
@@ -93,32 +163,66 @@ Claude Desktop / Cursor / Windsurf 配置 | Configuration
 }
 ```
 
-### 直接 HTTP 调用 | Direct HTTP Request
-通用 Curl 请求示例 | Universal Curl Demo
+# 直接 HTTP 调用 | Direct HTTP Request
+##通用 Curl 请求示例 | Universal Curl Demo
 
-# 1. 初始化连接 | Initialize Connection
+### 1. 初始化连接 | Initialize Connection
 ```bash
 curl -X POST https://www.xiaoqizhisuan.cn/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -H "x-api-key: xq_你的API密钥" \
-  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"my-client","version":"1.0"}}}'
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {},
+      "clientInfo": {"name": "my-client", "version": "1.0"}
+    }
+  }'
 ```
-# 2. 获取工具列表 | Fetch Tool List
+### 2. 获取工具列表 | Fetch Tool List
 ```bash
 curl -X POST https://www.xiaoqizhisuan.cn/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -H "x-api-key: xq_你的API密钥" \
-  -d '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/list",
+    "params": {}
+  }'
 ```
-# 3. 调用指定工具 | Call Target Tool
+### 3. 调用指定工具 | Call Target Tool
 ```bash
 curl -X POST https://www.xiaoqizhisuan.cn/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -H "x-api-key: xq_你的API密钥" \
-  -d '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"bazi_dayun"}}'
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "tools/call",
+    "params": {
+      "name": "bazi_dayun",
+      "arguments": {
+        "year": 1990, "month": 5, "day": 15, "hour": 8, "xingbie": "男"
+      }
+    }
+  }'
+```
+
+
+## windows/powershell
+```powershell
+curl -X POST https://www.xiaoqizhisuan.cn/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -H "x-api-key: xq_你的API密钥" -d "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-03-26\",\"capabilities\":{},\"clientInfo\":{\"name\":\"my-client\",\"version\":\"1.0\"}}}"
+
+curl -X POST https://www.xiaoqizhisuan.cn/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -H "x-api-key: xq_你的API密钥" -d "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/list\",\"params\":{}}"
+
+curl -X POST https://www.xiaoqizhisuan.cn/mcp -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" -H "x-api-key: xq_你的API密钥" -d "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"bazi_dayun\",\"arguments\":{\"year\":1990,\"month\":5,\"day\":15,\"hour\":8,\"xingbie\":\"男\"}}}"
 ```
 
 ## 错误码说明 | Error Code Explanation
