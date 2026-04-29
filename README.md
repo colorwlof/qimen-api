@@ -271,5 +271,5 @@ EN: This service uses transparent pay-per-call pricing. All interface prices and
   <img src="https://www.xiaoqizhisuan.cn/images/服务号二维码(透底).png" width="256" alt="小奇智算服务号二维码" />
 </p>
 <p align="center">
-  <img src="https://www.xiaoqizhisuan.cn/images/logo带口号.png" width="512" alt="小奇智算服务号logo" />
+  <img src="https://www.xiaoqizhisuan.cn/images/logo带口号.png" width="256" alt="小奇智算服务号logo" />
 </p>
