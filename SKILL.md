@@ -16,7 +16,11 @@ metadata:
       - type: apiKey
         name: XIAOQIZHISUAN_API_KEY
         description: Official API key for authentication with xiaoqizhisuan.cn MCP service
-    billingModel: pay-per-call
+    billing:
+        model: pay_per_call
+        requires_user_confirmation: true
+        per_session_spend_cap: ¥2
+        max_retries_per_call: 1
 ---
 
 # 小奇智算 API 能力 | Xiaoqi Intelligent Calculation API Skill
