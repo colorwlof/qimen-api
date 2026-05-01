@@ -1,0 +1,14 @@
+name: "@colorwlof/qimen-api"
+description: "奇门遁甲八字 API - 提供八字大运、奇门排盘、终身盘等命理服务，支持Claude Desktop和Cursor"
+server:
+  type: mcp
+  url: "https://www.xiaoqizhisuan.cn/mcp"
+  auth:
+    type: api_key
+    header: "x-api-key"
+config:
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: "Your Xiaoqi API key (starts with xq_)"
