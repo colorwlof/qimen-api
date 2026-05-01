@@ -18,9 +18,6 @@ metadata:
         description: Official API key for authentication with xiaoqizhisuan.cn MCP service
     billingModel: pay-per-call
 ---
-<p align="center">
-  <img src="https://www.xiaoqizhisuan.cn/images/logo.png" width="256" alt="小奇智算LOGO"/>
-</p>
 
 # 小奇智算 API 能力 | Xiaoqi Intelligent Calculation API Skill
 
@@ -58,7 +55,7 @@ GET HELP: https://www.xiaoqizhisuan.cn/help.html
  number (integer, 选填, 默认1) 排盘方法（1=拆补法, 2=置润法）
 
 返回 | Return:
- success, cost, balance, 数据, error
+ success, cost, balance, data, error
 
 ```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_2_qimen_paipan.html
@@ -75,7 +72,7 @@ GET HELP: https://www.xiaoqizhisuan.cn/help.html
  number (integer, 选填, 默认1)
 
 返回 | Return:
- success, cost, balance, 数据, html_url, error
+ success, cost, balance, data, html_url, error
 
 ```
 实测结果 | real test： https://www.xiaoqizhisuan.cn/examples/example_3_qimen_paipan_image.html
